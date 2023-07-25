@@ -1,7 +1,8 @@
 FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y cowsay
-ENTRYPOINT ["/usr/games/cowsay"]
-CMD ["Hi there"]
-
+WORKDIR /app
+RUN apt-get update && apt-get install -y python3
+COPY script.py script.py
+#ENTRYPOINT python3 script.py
+#CMD python3 script.py
 
 
